@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1048247709811",
+    "firebase_url": "https://movietmdb.firebaseio.com",
+    "project_id": "movietmdb",
+    "storage_bucket": "movietmdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048247709811:android:4c04fe2be012bf5abefa06",
+        "android_client_info": {
+          "package_name": "com.movietmdb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048247709811-4jpmemrk8s2baqghmql31jsctcqsrc84.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNA8_1EEJdr8EQ504_OTO3iyri3_v61Iw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048247709811-4jpmemrk8s2baqghmql31jsctcqsrc84.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1048247709811-ob7o5399k650fgfmusst9l2l2mcbd8fv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.movieTMDB"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
