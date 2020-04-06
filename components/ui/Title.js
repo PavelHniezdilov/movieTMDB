@@ -5,7 +5,7 @@ import Colors from "../../constants/Colors";
 
 const Title = props => {
   return (
-    <View style={styles.wrap}>
+    <View style={{ ...styles.wrap, ...props.styleWrap }}>
       <Text style={{ ...styles.text, ...props.style }}>{props.children}</Text>
     </View>
   );
@@ -13,15 +13,16 @@ const Title = props => {
 
 Title.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.object
+  style: PropTypes.object,
+  styleWrap: PropTypes.object
 };
 
 const styles = StyleSheet.create({
   wrap: {
-    marginBottom: 10
+    marginBottom: 20
   },
   text: {
-    fontFamily: "GothamPro",
+    fontFamily: "GothamPro-Bold",
     color: Colors.main_text,
     fontSize: 35
   }

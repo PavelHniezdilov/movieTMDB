@@ -41,6 +41,7 @@
 	<string></string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>GothamPro-Bold.ttf</string>
 		<string>GothamPro.ttf</string>
 		<string>AntDesign.ttf</string>
 		<string>Entypo.ttf</string>

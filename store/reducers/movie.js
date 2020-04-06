@@ -1,24 +1,28 @@
 import * as types from "../../constants/actionTypes";
 
 const initialState = {
-  searchMovie: []
+  listPreview: []
 };
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case types.SET_SEARCH_MOVIES:
-      const dataSearch = action.movies.Search.map(item => {
+    case types.SET_LIST_PREVIEW:
+      const rolePreview = action.role;
+      const dataPreview = action.preview.results.slice(0, 5).map(item => {
         return {
-          name: item.Title,
-          year: item.Year,
-          id: item.imdbID,
-          img: item.Poster
+          id: item.id,
+          title: item.title,
+          vote: item.vote_average,
+          img: item.poster_path
         };
       });
 
       return {
         ...state,
-        searchMovie: dataSearch
+        listPreview: {
+          ...state.listPreview,
+          [rolePreview]: dataPreview
+        }
       };
   }
   return state;

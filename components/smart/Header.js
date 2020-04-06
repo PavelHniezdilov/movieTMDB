@@ -59,9 +59,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 5,
+    marginTop: 10,
     paddingHorizontal: 30,
-    marginBottom: 10
+    marginBottom: 20
   },
   left: {
     width: 50

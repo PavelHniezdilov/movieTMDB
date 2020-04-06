@@ -1,2 +1,2 @@
 // movie
-export const SET_SEARCH_MOVIES = "SET_SEARCH_MOVIES";
+export const SET_LIST_PREVIEW = "SET_LIST_PREVIEW";

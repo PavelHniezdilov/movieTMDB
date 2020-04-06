@@ -1,8 +1,8 @@
-const movieUrl = "https://api.themoviedb.org/3/";
+const movieUrl = "https://api.themoviedb.org/3";
 const API_KEY = "441a253e3e631d3ab8b14cfff5df9f72";
 
-export function getSearchMovie(name) {
-  return callApi(`${movieUrl}&s=${name}`);
+export function getListPreview(role) {
+  return callApi(`${movieUrl}/movie/${role}?api_key=${API_KEY}`);
 }
 
 // Private functions

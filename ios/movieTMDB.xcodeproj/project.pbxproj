@@ -21,6 +21,7 @@
 		8B49B9407505D61D93908F3B /* libPods-movieTMDBTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA98DB3864EE57E1E83D437F /* libPods-movieTMDBTests.a */; };
 		A46161841C33206741378712 /* libPods-movieTMDB-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 202AFCA4698D360DD167B9E4 /* libPods-movieTMDB-tvOS.a */; };
 		E787D63A243A54AC00CBA386 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E787D639243A54AC00CBA386 /* GoogleService-Info.plist */; };
+		E7F6CC15243B57C800C62D65 /* GothamPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7F6CC14243B57C800C62D65 /* GothamPro-Bold.ttf */; };
 		E82F38555B3448A3A1001AAA /* GothamPro.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1F97943A37C48479F425D10 /* GothamPro.ttf */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		D1633D6CC80A1765DB9D2DB9 /* Pods-movieTMDB-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-movieTMDB-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-movieTMDB-tvOS/Pods-movieTMDB-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		DA98DB3864EE57E1E83D437F /* libPods-movieTMDBTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-movieTMDBTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E787D639243A54AC00CBA386 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "movieTMDB/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E7F6CC14243B57C800C62D65 /* GothamPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "GothamPro-Bold.ttf"; path = "../assets/fonts/GothamPro-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
@@ -206,6 +208,7 @@
 		C01E21494DE0474A991D1A1B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7F6CC14243B57C800C62D65 /* GothamPro-Bold.ttf */,
 				B1F97943A37C48479F425D10 /* GothamPro.ttf */,
 			);
 			name = Resources;
@@ -356,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E7F6CC15243B57C800C62D65 /* GothamPro-Bold.ttf in Resources */,
 				E787D63A243A54AC00CBA386 /* GoogleService-Info.plist in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				E82F38555B3448A3A1001AAA /* GothamPro.ttf in Resources */,
