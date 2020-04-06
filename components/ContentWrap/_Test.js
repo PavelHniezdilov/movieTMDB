@@ -2,15 +2,15 @@ import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import PropTypes from "prop-types";
 
-const MainWrap = props => {
+const Test = props => {
   return (
     <View style={styles.wrap}>
-      <Text>MainWrap</Text>
+      <Text>Test</Text>
     </View>
   );
 };
 
-MainWrap.propTypes = {};
+Test.propTypes = {};
 
 const styles = StyleSheet.create({
   wrap: {}
