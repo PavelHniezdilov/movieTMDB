@@ -1,31 +1,18 @@
 import React from "react";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  TouchableNativeFeedback,
-  TouchableOpacity,
-  View
-} from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import PropTypes from "prop-types";
 import Colors from "../../constants/Colors";
 
 const BtnText = props => {
-  let TouchableCmp = TouchableOpacity;
-
-  if (Platform.OS === "android" && Platform.Version >= 21) {
-    TouchableCmp = TouchableNativeFeedback;
-  }
-
   return (
     <View style={{ ...styles.wrap, ...props.styleWrap }}>
-      <TouchableCmp onPress={props.onPress}>
-        <View>
+      <TouchableOpacity onPress={props.onPress}>
+        <View style={styles.content}>
           <Text style={{ ...styles.text, ...props.style }}>
             {props.children}
           </Text>
         </View>
-      </TouchableCmp>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -42,9 +29,11 @@ const styles = StyleSheet.create({
     alignItems: "flex-start"
   },
   text: {
-    fontSize: 20,
     fontFamily: "GothamPro",
     color: Colors.main_text
+  },
+  content: {
+    padding: 3
   }
 });
 

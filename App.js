@@ -4,7 +4,6 @@ import { Provider } from "react-redux";
 import ReduxThunk from "redux-thunk";
 import movieReducer from "./store/reducers/movie";
 import { composeWithDevTools } from "redux-devtools-extension";
-import AppNavigator from "./navigation/appNavigation";
 import NavigationContainer from "./navigation/NavigationContainer";
 
 const rootReducer = combineReducers({

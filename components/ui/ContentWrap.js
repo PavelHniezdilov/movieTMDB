@@ -1,22 +1,36 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import PropTypes from "prop-types";
 
 const ContentWrap = props => {
+  let Content;
+
+  if (props.scrollView) {
+    Content = ScrollView;
+  } else {
+    Content = View;
+  }
+
   return (
-    <View style={{ ...styles.wrap, ...props.style }}>{props.children}</View>
+    <View style={{ ...styles.wrap, ...props.style }}>
+      <Content style={styles.content}>{props.children}</Content>
+    </View>
   );
 };
 
 ContentWrap.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.object
+  style: PropTypes.object,
+  scrollView: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
   wrap: {
     flex: 1,
-    padding: 20
+    paddingHorizontal: 20
+  },
+  content: {
+    flex: 1
   }
 });
 

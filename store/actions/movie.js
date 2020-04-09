@@ -1,12 +1,24 @@
 import * as Api from "../../services/api/api";
 import * as types from "../../constants/actionTypes";
 
-export const fetchListPreview = role => {
+export const fetchPreviewList = role => {
   return async dispatch => {
     try {
-      const resData = await Api.getListPreview(role);
+      const resData = await Api.getPreviewList(role);
 
-      dispatch({ type: types.SET_LIST_PREVIEW, preview: resData, role });
+      dispatch({ type: types.SET_PREVIEW_LIST, preview: resData, role });
+    } catch (err) {
+      throw err;
+    }
+  };
+};
+
+export const fetchMoviesList = (role, page) => {
+  return async dispatch => {
+    try {
+      const resData = await Api.getMoviesList(role, page);
+
+      dispatch({ type: types.SET_MOVIES_LIST, movies: resData });
     } catch (err) {
       throw err;
     }

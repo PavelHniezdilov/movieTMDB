@@ -1,2 +1,3 @@
 // movie
-export const SET_LIST_PREVIEW = "SET_LIST_PREVIEW";
+export const SET_PREVIEW_LIST = "SET_PREVIEW_LIST";
+export const SET_MOVIES_LIST = "SET_MOVIES_LIST";

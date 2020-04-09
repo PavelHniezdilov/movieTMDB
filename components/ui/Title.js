@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: "GothamPro-Bold",
     color: Colors.main_text,
-    fontSize: 35
+    fontSize: 28
   }
 });
 

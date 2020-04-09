@@ -4,19 +4,25 @@ import PropTypes from "prop-types";
 import Colors from "../../constants/Colors";
 
 const TextCommon = props => {
+  let fontWeight = props.bold
+    ? { fontFamily: "GothamPro-Bold" }
+    : { fontFamily: "GothamPro" };
+
   return (
-    <Text style={{ ...styles.text, ...props.style }}>{props.children}</Text>
+    <Text style={{ ...fontWeight, ...styles.text, ...props.style }}>
+      {props.children}
+    </Text>
   );
 };
 
 TextCommon.propTypes = {
   children: PropTypes.node,
-  style: PropTypes.object
+  style: PropTypes.object,
+  bold: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
   text: {
-    fontFamily: "GothamPro",
     color: Colors.main_text
   }
 });

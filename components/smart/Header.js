@@ -34,16 +34,19 @@ const Header = props => {
       <View style={styles.left}>
         {props.backBtn && (
           <TouchableCmp onPress={backHandler}>
-            <Icon name="arrow-left" size={30} color={Colors.header_btn} />
+            <Icon name="arrow-left" size={20} color={Colors.header_btn} />
           </TouchableCmp>
         )}
       </View>
       <View style={styles.center}>
-        <Image source={require("../../assets/imgs/logo.png")} />
+        <Image
+          style={styles.img}
+          source={require("../../assets/imgs/logo.png")}
+        />
       </View>
       <View style={styles.right}>
         <TouchableCmp onPress={menuHandler}>
-          <Icon name="menu" size={30} color={Colors.header_btn} />
+          <Icon name="menu" size={20} color={Colors.header_btn} />
         </TouchableCmp>
       </View>
     </View>
@@ -59,7 +62,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 10,
+    marginTop: 15,
     paddingHorizontal: 30,
     marginBottom: 20
   },
@@ -69,6 +72,10 @@ const styles = StyleSheet.create({
   right: {
     width: 50,
     alignItems: "flex-end"
+  },
+  img: {
+    width: 110,
+    height: 39
   }
 });
 

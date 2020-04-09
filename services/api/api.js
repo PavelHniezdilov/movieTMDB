@@ -1,8 +1,17 @@
-const movieUrl = "https://api.themoviedb.org/3";
-const API_KEY = "441a253e3e631d3ab8b14cfff5df9f72";
+import Config from "react-native-config";
 
-export function getListPreview(role) {
-  return callApi(`${movieUrl}/movie/${role}?api_key=${API_KEY}`);
+export function getPreviewList(role) {
+  return callApi(
+    `${Config.MOVIE_BASE_URL}/movie/${role}?api_key=${Config.API_KEY}`
+  );
+}
+
+export function getMoviesList(role, page) {
+  return callApi(
+    `${Config.MOVIE_BASE_URL}/movie/${role}?api_key=${
+      Config.API_KEY
+    }&page=${page}`
+  );
 }
 
 // Private functions

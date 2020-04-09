@@ -1,25 +1,35 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import Header from "../components/smart/Header";
-import TextCommon from "../components/ui/TextCommon";
 import MainWrap from "../components/ui/MainWrap";
 import ContentWrap from "../components/ui/ContentWrap";
+import NavBar from "../components/smart/NavBar";
+import Title from "../components/ui/Title";
+import MoviesList from "../components/smart/MoviesList";
 
 const MoviesListScreen = props => {
+  const role = props.navigation.getParam("role");
+  const title = props.navigation.getParam("title");
+
   return (
     <MainWrap>
-      <View style={styles.wrap}>
-        <Header backBtn />
-        <ContentWrap>
-          <TextCommon style={styles.text}>movie list screen</TextCommon>
-        </ContentWrap>
-      </View>
+      <Header backBtn />
+      <ContentWrap style={styles.content}>
+        <Title styleWrap={styles.title}>{title}</Title>
+        <MoviesList role={role} />
+      </ContentWrap>
+      <NavBar />
     </MainWrap>
   );
 };
 
 const styles = StyleSheet.create({
-  wrap: {}
+  content: {
+    paddingHorizontal: 0
+  },
+  title: {
+    paddingLeft: 20
+  }
 });
 
 export default MoviesListScreen;
