@@ -1,12 +1,5 @@
 import React, { useContext } from "react";
-import {
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-  Platform,
-  TouchableNativeFeedback
-} from "react-native";
+import { View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 import Icon from "react-native-vector-icons/SimpleLineIcons";
 import Colors from "../../constants/Colors";
@@ -15,14 +8,12 @@ import { NavigationContext } from "react-navigation";
 const Header = props => {
   const navigation = useContext(NavigationContext);
 
-  let TouchableCmp = TouchableOpacity;
-
-  if (Platform.OS === "android" && Platform.Version >= 21) {
-    TouchableCmp = TouchableNativeFeedback;
-  }
-
   const backHandler = () => {
     navigation.goBack();
+  };
+
+  const logoHandler = () => {
+    navigation.navigate("App");
   };
 
   const menuHandler = () => {
@@ -33,21 +24,23 @@ const Header = props => {
     <View style={styles.wrap}>
       <View style={styles.left}>
         {props.backBtn && (
-          <TouchableCmp onPress={backHandler}>
+          <TouchableOpacity onPress={backHandler}>
             <Icon name="arrow-left" size={20} color={Colors.header_btn} />
-          </TouchableCmp>
+          </TouchableOpacity>
         )}
       </View>
       <View style={styles.center}>
-        <Image
-          style={styles.img}
-          source={require("../../assets/imgs/logo.png")}
-        />
+        <TouchableOpacity onPress={logoHandler}>
+          <Image
+            style={styles.img}
+            source={require("../../assets/imgs/logo.png")}
+          />
+        </TouchableOpacity>
       </View>
       <View style={styles.right}>
-        <TouchableCmp onPress={menuHandler}>
+        <TouchableOpacity onPress={menuHandler}>
           <Icon name="menu" size={20} color={Colors.header_btn} />
-        </TouchableCmp>
+        </TouchableOpacity>
       </View>
     </View>
   );

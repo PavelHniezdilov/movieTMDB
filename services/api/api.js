@@ -14,6 +14,12 @@ export function getMoviesList(role, page) {
   );
 }
 
+export function getMovieDetails(id) {
+  return callApi(
+    `${Config.MOVIE_BASE_URL}/movie/${id}?api_key=${Config.API_KEY}`
+  );
+}
+
 // Private functions
 
 function callApi(url = { method: "get" }) {

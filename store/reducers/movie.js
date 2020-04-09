@@ -2,7 +2,8 @@ import * as types from "../../constants/actionTypes";
 
 const initialState = {
   previewList: [],
-  moviesList: []
+  moviesList: [],
+  movieDetails: {}
 };
 
 export default (state = initialState, action) => {
@@ -39,6 +40,14 @@ export default (state = initialState, action) => {
       return {
         ...state,
         moviesList: dataMovies
+      };
+
+    case types.SET_MOVIE_DETAILS:
+      const details = action.details;
+
+      return {
+        ...state,
+        movieDetails: details
       };
   }
   return state;

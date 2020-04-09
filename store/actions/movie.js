@@ -24,3 +24,15 @@ export const fetchMoviesList = (role, page) => {
     }
   };
 };
+
+export const fetchMovieDetails = id => {
+  return async dispatch => {
+    try {
+      const resData = await Api.getPreviewList(id);
+
+      dispatch({ type: types.SET_MOVIE_DETAILS, details: resData });
+    } catch (err) {
+      throw err;
+    }
+  };
+};
