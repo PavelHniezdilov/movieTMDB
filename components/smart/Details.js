@@ -32,10 +32,15 @@ const Details = props => {
   }, [dispatch, id]);
 
   useEffect(() => {
-    setIsLoading(true);
-    loadCurrentData().then(() => {
-      setIsLoading(false);
-    });
+    let isSubscribed = true;
+    if (isSubscribed) {
+      setIsLoading(true);
+      loadCurrentData().then(() => {
+        setIsLoading(false);
+      });
+    }
+
+    return () => (isSubscribed = false);
   }, [loadCurrentData]);
 
   if (error) {
@@ -49,6 +54,10 @@ const Details = props => {
 
   if (isLoading) {
     return <ActivityIndicator size="large" color={Colors.spinner} />;
+  }
+
+  if (Object.keys(data).length === 0) {
+    return <TextCommon>No data</TextCommon>;
   }
 
   return (

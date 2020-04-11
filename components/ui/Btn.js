@@ -39,18 +39,18 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   content: {
-    paddingTop: 30,
-    paddingBottom: 26,
-    paddingHorizontal: 50,
-    minWidth: 280,
+    paddingTop: 16,
+    paddingBottom: 16,
+    paddingHorizontal: 30,
+    minWidth: 250,
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: Colors.btn_fill,
-    borderRadius: 40
+    borderRadius: 30
   },
   text: {
     color: Colors.btn_text,
-    fontSize: 25,
+    fontSize: 20,
     fontFamily: "GothamPro-Bold"
   }
 });

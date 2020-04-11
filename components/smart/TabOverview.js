@@ -8,7 +8,10 @@ const TabOverview = props => {
   const data = useSelector(state => state.movie.movieDetails);
 
   return (
-    <View style={styles.content}>
+    <View
+      onLayout={e => props.onLayout(e.nativeEvent.layout.height)}
+      style={styles.content}
+    >
       {data.tagline.length !==
       (
         <View style={styles.titleBox}>
@@ -23,7 +26,9 @@ const TabOverview = props => {
   );
 };
 
-TabOverview.propTypes = {};
+TabOverview.propTypes = {
+  onLayout: PropTypes.func
+};
 
 const styles = StyleSheet.create({
   content: {

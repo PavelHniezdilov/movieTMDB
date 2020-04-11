@@ -20,6 +20,26 @@ export function getMovieDetails(id) {
   );
 }
 
+export function getMovieImages(id) {
+  return callApi(
+    `${Config.MOVIE_BASE_URL}/movie/${id}/images?api_key=${Config.API_KEY}`
+  );
+}
+
+export function getMovieReviews(id) {
+  return callApi(
+    `${Config.MOVIE_BASE_URL}/movie/${id}/reviews?api_key=${Config.API_KEY}`
+  );
+}
+
+export function getSearchList(text, page) {
+  return callApi(
+    `${Config.MOVIE_BASE_URL}/search/movie?api_key=${
+      Config.API_KEY
+    }&query=${text}&page=${page}`
+  );
+}
+
 // Private functions
 
 function callApi(url = { method: "get" }) {

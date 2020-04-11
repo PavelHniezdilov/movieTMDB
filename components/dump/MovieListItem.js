@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import PropTypes from "prop-types";
 import TextCommon from "../ui/TextCommon";
-import Config from "react-native-config";
 import Icon from "react-native-vector-icons/SimpleLineIcons";
 import Colors from "../../constants/Colors";
 
@@ -26,10 +25,7 @@ const MovieListItem = props => {
     <View style={{ ...styles.wrap, ...props.style }}>
       <TouchableCmp onPress={onPress}>
         <View>
-          <ImageBackground
-            source={{ uri: `${Config.MOVIE_IMG_BASE_URL}/w500${img}` }}
-            style={styles.image}
-          >
+          <ImageBackground source={{ uri: img }} style={styles.image}>
             <View style={styles.content}>
               <Icon name="control-play" size={20} color={Colors.main_text} />
               <TextCommon bold style={styles.text}>

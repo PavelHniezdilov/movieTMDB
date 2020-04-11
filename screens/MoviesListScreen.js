@@ -10,13 +10,14 @@ import MoviesList from "../components/smart/MoviesList";
 const MoviesListScreen = props => {
   const role = props.navigation.getParam("role");
   const title = props.navigation.getParam("title");
+  const query = props.navigation.getParam("query");
 
   return (
     <MainWrap>
       <Header backBtn />
       <ContentWrap style={styles.content}>
         <Title styleWrap={styles.title}>{title}</Title>
-        <MoviesList role={role} />
+        <MoviesList role={role} query={query} />
       </ContentWrap>
       <NavBar />
     </MainWrap>

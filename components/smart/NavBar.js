@@ -57,7 +57,9 @@ const NavBar = props => {
   const renderData = data.map((item, idx) => {
     return (
       <View key={idx} style={styles.col}>
-        <TouchableCmp onPress={() => onPressHandler(item.goTo, item.role, item.text)}>
+        <TouchableCmp
+          onPress={() => onPressHandler(item.goTo, item.role, item.text)}
+        >
           <View style={styles.item}>
             <Icon name={item.icon} size={20} color={Colors.main_text} />
             <TextCommon style={styles.text}>{item.text}</TextCommon>
@@ -77,7 +79,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-between"
+    justifyContent: "space-between",
+    backgroundColor: Colors.main_fill
   },
   col: {
     flex: 1
