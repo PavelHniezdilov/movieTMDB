@@ -1,17 +1,20 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Header from "../components/smart/Header";
 import ContentWrap from "../components/ui/ContentWrap";
-import TextCommon from "../components/ui/TextCommon";
 import NavBar from "../components/smart/NavBar";
 import MainWrap from "../components/ui/MainWrap";
+import Title from "../components/ui/Title";
+import SearchForm from "../components/smart/SearchForm";
 
 const SearchScreen = props => {
   return (
     <MainWrap>
       <Header backBtn />
       <ContentWrap>
-        <TextCommon style={styles.text}>search screen</TextCommon>
+        <View style={styles.content}>
+          <SearchForm />
+        </View>
       </ContentWrap>
       <NavBar />
     </MainWrap>
@@ -19,7 +22,11 @@ const SearchScreen = props => {
 };
 
 const styles = StyleSheet.create({
-  wrap: {}
+  content: {
+    alignItems: "center",
+    justifyContent: "center",
+    flex: 1
+  }
 });
 
 export default SearchScreen;

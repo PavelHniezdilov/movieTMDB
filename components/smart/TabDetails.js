@@ -9,7 +9,10 @@ const TabDetails = props => {
   const data = useSelector(state => state.movie.movieDetails);
 
   return (
-    <View style={styles.content}>
+    <View
+      style={styles.content}
+      onLayout={e => props.onLayout(e.nativeEvent.layout.height)}
+    >
       <View style={styles.row}>
         <View style={styles.colKey}>
           <TextCommon style={styles.key}>Year</TextCommon>
@@ -80,7 +83,9 @@ const TabDetails = props => {
   );
 };
 
-TabDetails.propTypes = {};
+TabDetails.propTypes = {
+  onLayout: PropTypes.func
+};
 
 const styles = StyleSheet.create({
   content: {

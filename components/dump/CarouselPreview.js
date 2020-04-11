@@ -9,7 +9,6 @@ import {
 import PropTypes from "prop-types";
 import Carousel from "react-native-snap-carousel";
 import TextCommon from "../ui/TextCommon";
-import Config from "react-native-config";
 import Colors from "../../constants/Colors";
 
 const { width: screenWidth } = Dimensions.get("window");
@@ -26,10 +25,7 @@ const CarouselPreview = props => {
         <TouchableOpacity onPress={() => props.onPress(item.id)}>
           <View>
             <View style={styles.imgBox}>
-              <Image
-                style={styles.image}
-                source={{ uri: `${Config.MOVIE_IMG_BASE_URL}/w154${item.img}` }}
-              />
+              <Image style={styles.image} source={{ uri: item.img }} />
             </View>
             <TextCommon bold style={styles.title}>
               {item.title}

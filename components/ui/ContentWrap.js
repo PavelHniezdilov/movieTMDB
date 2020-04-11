@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20
   },
   content: {
-    flex: 1
+    flex: 1,
   }
 });
 

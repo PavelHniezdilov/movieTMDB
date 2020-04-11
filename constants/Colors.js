@@ -8,5 +8,8 @@ export default {
   header_btn: "#969696",
   btn_fill: "#c0a97d",
   btn_text: "#fff",
-  tab_fill: "#232323"
+  tab_fill: "#232323",
+  input_label: "#666666",
+  input_text: "#818181",
+  input_bd: "#818181"
 };

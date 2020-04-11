@@ -36,3 +36,39 @@ export const fetchMovieDetails = id => {
     }
   };
 };
+
+export const fetchMovieImages = id => {
+  return async dispatch => {
+    try {
+      const resData = await Api.getMovieImages(id);
+
+      dispatch({ type: types.SET_MOVIE_IMAGES, imgs: resData });
+    } catch (err) {
+      throw err;
+    }
+  };
+};
+
+export const fetchMovieReviews = id => {
+  return async dispatch => {
+    try {
+      const resData = await Api.getMovieReviews(id);
+
+      dispatch({ type: types.SET_MOVIE_REVIEWS, reviews: resData });
+    } catch (err) {
+      throw err;
+    }
+  };
+};
+
+export const fetchSearchList = (text, page) => {
+  return async dispatch => {
+    try {
+      const resData = await Api.getSearchList(text, page);
+
+      dispatch({ type: types.SET_SEARCH_LIST, search: resData });
+    } catch (err) {
+      throw err;
+    }
+  };
+};

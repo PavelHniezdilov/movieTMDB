@@ -4,7 +4,6 @@ import {
   StyleSheet,
   Button,
   ActivityIndicator,
-  FlatList,
   ScrollView
 } from "react-native";
 import PropTypes from "prop-types";
@@ -17,7 +16,7 @@ import MovieListItem from "../dump/MovieListItem";
 import Pagination from "../dump/Pagination";
 
 const MoviesList = props => {
-  const { role } = props;
+  const { role, query } = props;
   const navigation = useContext(NavigationContext);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -32,9 +31,16 @@ const MoviesList = props => {
 
   const dispatch = useDispatch();
   const loadCurrentData = useCallback(async () => {
+    let getData;
+    if (role === "search") {
+      getData = dispatch(movieActions.fetchSearchList(query, currentPage));
+    } else {
+      getData = dispatch(movieActions.fetchMoviesList(role, currentPage));
+    }
+
     setError(null);
     try {
-      await dispatch(movieActions.fetchMoviesList(role, currentPage));
+      await getData;
     } catch (err) {
       setError(err.message);
     }
@@ -110,7 +116,8 @@ const MoviesList = props => {
 };
 
 MoviesList.propTypes = {
-  role: PropTypes.string
+  role: PropTypes.string.isRequired,
+  query: PropTypes.string
 };
 
 const styles = StyleSheet.create({
