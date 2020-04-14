@@ -5,14 +5,9 @@ import ContentWrap from "../components/ui/ContentWrap";
 import NavBar from "../components/smart/NavBar";
 import MainWrap from "../components/ui/MainWrap";
 import Details from "../components/smart/Details";
-import { useAuth } from "../services/hooks/auth-hook";
 
 const MovieDetailsScreen = props => {
   const id = props.navigation.getParam("id");
-
-  const [user, initializing, signIn, signOut] = useAuth;
-
-  console.log(user, initializing);
 
   return (
     <MainWrap>

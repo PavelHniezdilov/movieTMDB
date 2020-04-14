@@ -11,9 +11,11 @@ import Icon from "react-native-vector-icons/SimpleLineIcons";
 import Colors from "../../constants/Colors";
 import TextCommon from "../ui/TextCommon";
 import { NavigationContext } from "react-navigation";
+import { AuthContext } from "../../services/context/auth-context";
 
 const NavBar = props => {
   const navigation = useContext(NavigationContext);
+  const { user } = useContext(AuthContext);
 
   let TouchableCmp = TouchableOpacity;
 
@@ -49,6 +51,8 @@ const NavBar = props => {
   const onPressHandler = (page, role, title) => {
     if (role) {
       navigation.navigate(page, { role, title });
+    } else if (title === "Favourites") {
+      navigation.navigate(user ? page : "Auth");
     } else {
       navigation.navigate(page);
     }

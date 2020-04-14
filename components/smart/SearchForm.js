@@ -26,7 +26,7 @@ const SearchForm = props => {
       {
         ...formState.inputs
       },
-      formState.inputs.search.isValid && formState.inputs.test.isValid
+      formState.inputs.search.isValid
     );
   }, [inputHandler]);
 

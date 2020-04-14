@@ -53,7 +53,7 @@ const Input = props => {
   };
 
   return (
-    <View style={styles.wrap}>
+    <View style={{ ...styles.wrap, ...props.styleWrap }}>
       <TextCommon style={styles.label}>{props.placeholder}</TextCommon>
       <TextInput
         id={props.id}
@@ -61,6 +61,7 @@ const Input = props => {
         onBlur={touchHandler}
         value={inputState.value}
         style={styles.input}
+        secureTextEntry={props.secureText}
       />
       {!inputState.isValid && inputState.isTouched && (
         <TextCommon style={styles.textError}>{props.errorText}</TextCommon>
@@ -76,7 +77,9 @@ Input.propTypes = {
   initialValue: PropTypes.string,
   validators: PropTypes.array.isRequired,
   onInput: PropTypes.func.isRequired,
-  initialValid: PropTypes.bool
+  initialValid: PropTypes.bool,
+  styleWrap: PropTypes.object,
+  secureText: PropTypes.bool
 };
 
 const styles = StyleSheet.create({
