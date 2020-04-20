@@ -4,9 +4,11 @@ import PropTypes from "prop-types";
 import Icon from "react-native-vector-icons/SimpleLineIcons";
 import Colors from "../../constants/Colors";
 import { NavigationContext } from "react-navigation";
+import { AuthContext } from "../../services/context/auth-context";
 
 const Header = props => {
   const navigation = useContext(NavigationContext);
+  const { user, signOut } = useContext(AuthContext);
 
   const backHandler = () => {
     navigation.goBack();
@@ -16,8 +18,12 @@ const Header = props => {
     navigation.navigate("App");
   };
 
-  const menuHandler = () => {
-    console.log("menuHandler");
+  const authHandler = () => {
+    if (user) {
+      signOut();
+    } else {
+      navigation.navigate("Auth");
+    }
   };
 
   return (
@@ -38,8 +44,12 @@ const Header = props => {
         </TouchableOpacity>
       </View>
       <View style={styles.right}>
-        <TouchableOpacity onPress={menuHandler}>
-          <Icon name="menu" size={20} color={Colors.header_btn} />
+        <TouchableOpacity onPress={authHandler}>
+          <Icon
+            name={user ? "user-unfollow" : "login"}
+            size={20}
+            color={Colors.header_btn}
+          />
         </TouchableOpacity>
       </View>
     </View>

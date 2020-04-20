@@ -9,12 +9,15 @@
     "build:apk": "cd android && ./gradlew assembleRelease",
     "test": "jest",
     "prepare": "patch-package",
-    "clean": "\\rm -fr ./node_modules dist/* ios/build ios/Pods ios/movieTMDB.xcarchive android/build android/app/build public/js public/assets && yarn && cd ios && pod install"
+    "clean": "\\rm -fr ./node_modules dist/* ios/build ios/Pods ios/movieTMDB.xcarchive android/build android/app/build public/js public/assets && yarn && cd ios && pod install",
+    "build-apk": "react-native run-android --variant=release"
   },
   "dependencies": {
+    "@react-native-community/google-signin": "^4.0.0",
     "@react-native-community/masked-view": "^0.1.7",
     "@react-native-firebase/app": "^6.3.4",
     "@react-native-firebase/auth": "^6.4.0",
+    "@react-native-firebase/database": "^6.4.0",
     "jetifier": "^1.6.5",
     "prop-types": "^15.7.2",
     "react": "16.9.0",

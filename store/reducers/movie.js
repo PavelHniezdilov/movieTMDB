@@ -6,7 +6,7 @@ const initialState = {
   moviesList: [],
   movieDetails: {},
   movieImages: [],
-  movieReviews: [],
+  movieReviews: []
 };
 
 export default (state = initialState, action) => {

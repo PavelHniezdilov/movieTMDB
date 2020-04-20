@@ -6,6 +6,7 @@ import movieReducer from "./store/reducers/movie";
 import { composeWithDevTools } from "redux-devtools-extension";
 import NavigationContainer from "./navigation/NavigationContainer";
 import { AuthProvider } from "./services/context/auth-context";
+import { FavouriteProvider } from "./services/context/favourite-context";
 
 const rootReducer = combineReducers({
   movie: movieReducer
@@ -19,9 +20,11 @@ const store = createStore(
 export default function App() {
   return (
     <AuthProvider>
-      <Provider store={store}>
-        <NavigationContainer />
-      </Provider>
+      <FavouriteProvider>
+        <Provider store={store}>
+          <NavigationContainer />
+        </Provider>
+      </FavouriteProvider>
     </AuthProvider>
   );
 }

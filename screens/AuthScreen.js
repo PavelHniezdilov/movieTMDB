@@ -25,7 +25,9 @@ const AuthScreen = props => {
 };
 
 const styles = StyleSheet.create({
-
+  content: {
+    paddingHorizontal: 0
+  }
 });
 
 export default AuthScreen;

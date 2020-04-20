@@ -20,7 +20,7 @@ const Btn = props => {
   return (
     <View style={{ ...styles.wrap, ...props.styleWrap }}>
       <TouchableCmp onPress={props.onPress}>
-        <View style={styles.content}>
+        <View style={{ ...styles.content, ...props.style }}>
           <Text style={styles.text}>{props.children}</Text>
         </View>
       </TouchableCmp>
@@ -31,7 +31,8 @@ const Btn = props => {
 Btn.propTypes = {
   children: PropTypes.node,
   onPress: PropTypes.func,
-  styleWrap: PropTypes.object
+  styleWrap: PropTypes.object,
+  style: PropTypes.object
 };
 
 const styles = StyleSheet.create({
@@ -50,7 +51,7 @@ const styles = StyleSheet.create({
   },
   text: {
     color: Colors.btn_text,
-    fontSize: 20,
+    fontSize: 18,
     fontFamily: "GothamPro-Bold"
   }
 });

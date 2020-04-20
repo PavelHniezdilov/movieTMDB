@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useContext } from "react";
 import {
   View,
   StyleSheet,
@@ -13,6 +13,7 @@ import TextCommon from "../ui/TextCommon";
 import Colors from "../../constants/Colors";
 import Config from "react-native-config";
 import DetailsTab from "./DetailsTab";
+import FavouritesBtn from "./FavouritesBtn";
 
 const Details = props => {
   const { id } = props;
@@ -68,6 +69,12 @@ const Details = props => {
         }}
         style={styles.image}
       >
+        <FavouritesBtn
+          id={id}
+          title={data.title}
+          styleWrap={styles.favouriteBtnWrap}
+          style={styles.favouriteBtn}
+        />
         <View style={styles.titleBox}>
           <TextCommon bold style={styles.title}>
             {data.title}
@@ -103,6 +110,15 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 16,
     lineHeight: 20
+  },
+  favouriteBtnWrap: {
+    position: "absolute",
+    top: 0,
+    right: 0,
+    backgroundColor: "rgba(0, 0, 0, .5)"
+  },
+  favouriteBtn: {
+    padding: 10
   }
 });
 

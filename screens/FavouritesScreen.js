@@ -1,16 +1,16 @@
-import React, {useContext, useEffect} from 'react';
+import React, { useContext, useEffect } from "react";
 import { StyleSheet } from "react-native";
 import Header from "../components/smart/Header";
 import ContentWrap from "../components/ui/ContentWrap";
-import TextCommon from "../components/ui/TextCommon";
 import NavBar from "../components/smart/NavBar";
 import MainWrap from "../components/ui/MainWrap";
+import Favourites from "../components/smart/Favourites";
+import Title from "../components/ui/Title";
 import { AuthContext } from "../services/context/auth-context";
-import BtnText from "../components/ui/BtnText";
 
 const FavouritesScreen = props => {
   const ctx = useContext(AuthContext);
-  const { user, signOut } = ctx;
+  const { user } = ctx;
 
   useEffect(() => {
     if (!user) {
@@ -22,8 +22,8 @@ const FavouritesScreen = props => {
     <MainWrap>
       <Header backBtn />
       <ContentWrap>
-        <TextCommon style={styles.text}>fav screen</TextCommon>
-        <BtnText onPress={signOut}>signOut</BtnText>
+        <Title>Favourites</Title>
+        <Favourites />
       </ContentWrap>
       <NavBar />
     </MainWrap>
